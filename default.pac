@@ -20,19 +20,19 @@ var Pd_Names = [
 ];
 
 var Lib_Names = [
-  "||cnki.net"
+  "||cnki.net",
   "||wanfangdata.com.cn",
   "||cqvip.com",
-  "||ieee.org"
+  "||ieee.org",
   "||webofknowledge.com",
-  "||dl.acm.org"
+  "||dl.acm.org",
   "||engineeringvillage.com",
-  "||sciencedirect.com"
-  "||theiet.org",
+  "||sciencedirect.com",
+  "||theiet.org"
 ];
 
 var Jp_Names = [
-  "||nicovideo.jp"
+  "||nicovideo.jp",
   "||dmm.com"
 ];
 
