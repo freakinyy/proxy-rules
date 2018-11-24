@@ -76,7 +76,7 @@ cat $TMP_DIR/Chn_IPs.txt | sed "s/^/IP-CIDR,/g" | sed "s/$/,DIRECT/g" | sort | a
 cat $TMP_DIR/Chn_Names.txt | sed "s/^/DOMAIN-SUFFIX,/g" | sed "s/$/,DIRECT/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
 
 cat >> $OUT_TMP_FILE <<EOF
-FINAL,PROXY,force-remote-dns
+FINAL,*,PROXY,force-remote-dns
 [Host]
 localhost = 127.0.0.1
 
