@@ -49,8 +49,8 @@ else
     fi
 fi
 
-TMP_DIR=`mktemp -d /tmp/PacGen.XXXXXX`
-OUT_TMP_FILE="$TMP_DIR/PacGen.out.tmp"
+TMP_DIR=`mktemp -d /tmp/gen_pac.XXXXXX`
+OUT_TMP_FILE="$TMP_DIR/gen_pac.out.tmp"
 
 echo "Generating $OUT_FILE..."
 

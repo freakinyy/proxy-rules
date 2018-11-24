@@ -49,8 +49,8 @@ else
     fi
 fi
 
-TMP_DIR=`mktemp -d /tmp/PacGen.XXXXXX`
-OUT_TMP_FILE="$TMP_DIR/PacGen.out.tmp"
+TMP_DIR=`mktemp -d /tmp/gen_proxycap_xml.XXXXXX`
+OUT_TMP_FILE="$TMP_DIR/gen_proxycap_xml.out.tmp"
 
 echo "Getting China IPs..."
 curl -s -L $CURL_EXTARG 'https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > $TMP_DIR/Chn_IPs.txt
