@@ -77,6 +77,7 @@ cat $TMP_DIR/Chn_Names.txt | sed "s/^/DOMAIN-SUFFIX,/g" | sed "s/$/,DIRECT/g" | 
 
 cat >> $OUT_TMP_FILE <<EOF
 FINAL,*,PROXY,force-remote-dns
+
 [Host]
 localhost = 127.0.0.1
 
