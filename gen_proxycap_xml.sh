@@ -53,10 +53,10 @@ TMP_DIR=`mktemp -d /tmp/PacGen.XXXXXX`
 OUT_TMP_FILE="$TMP_DIR/PacGen.out.tmp"
 
 echo "Getting China IPs..."
-curl -s -L $CURL_EXTARG 'https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf' | grep -v "^#" | sed "s/server=\///g" | sed "s/\/114.114.114.114//g" | sort | awk '{if ($0!=line) print;line=$0}' > $TMP_DIR/Chn_Names.txt
+curl -s -L $CURL_EXTARG 'https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > $TMP_DIR/Chn_IPs.txt
 
 echo "Getting China Names..."
-curl -s -L $CURL_EXTARG 'https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > $TMP_DIR/Chn_IPs.txt
+curl -s -L $CURL_EXTARG 'https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf' | grep -v "^#" | sed "s/server=\///g" | sed "s/\/114.114.114.114//g" | sort | awk '{if ($0!=line) print;line=$0}' > $TMP_DIR/Chn_Names.txt
 
 echo "Generating $OUT_FILE..."
 
