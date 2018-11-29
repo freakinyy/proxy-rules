@@ -126,13 +126,13 @@ cat >> $OUT_TMP_FILE <<EOF
         <hostname wildcard="localhost" />
         <hostname wildcard="ubuntu_server" />
         <hostname wildcard="openwrt" />
-        <hostname wildcard="wrt1900acs" />
+        <hostname wildcard="wrt32x" />
         <hostname wildcard="freakinyy-tft5" />
         <hostname wildcard="freakinyy-cui8" />
         <hostname wildcard="*.localhost" />
         <hostname wildcard="*.ubuntu_server" />
         <hostname wildcard="*.openwrt" />
-        <hostname wildcard="*.wrt1900acs" />
+        <hostname wildcard="*.wrt32x" />
         <hostname wildcard="*.freakinyy-tft5" />
         <hostname wildcard="*.freakinyy-cui8" />
       </hostnames>
@@ -239,13 +239,13 @@ cat >> $OUT_TMP_FILE <<EOF
     <remote_dns_exception wildcard="localhost" />
     <remote_dns_exception wildcard="ubuntu_server" />
     <remote_dns_exception wildcard="openwrt" />
-    <remote_dns_exception wildcard="wrt1900acs" />
+    <remote_dns_exception wildcard="wrt32x" />
     <remote_dns_exception wildcard="freakinyy-tft5" />
     <remote_dns_exception wildcard="freakinyy-cui8" />
     <remote_dns_exception wildcard="*.localhost" />
     <remote_dns_exception wildcard="*.ubuntu_server" />
     <remote_dns_exception wildcard="*.openwrt" />
-    <remote_dns_exception wildcard="*.wrt1900acs" />
+    <remote_dns_exception wildcard="*.wrt32x" />
     <remote_dns_exception wildcard="*.freakinyy-tft5" />
     <remote_dns_exception wildcard="*.freakinyy-cui8" />
 EOF

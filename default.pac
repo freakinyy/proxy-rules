@@ -8,7 +8,7 @@ var Local_Names = [
   "http://localhost",
   "http://ubuntu_server",
   "http://openwrt",
-  "http://wrt1900acs",
+  "http://wrt32x",
   "http://freakinyy-tft5",
   "http://freakinyy-cui8"
 ];
