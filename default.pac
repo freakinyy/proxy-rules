@@ -1,4 +1,4 @@
-#
+#1
 
 var direct = "DIRECT;";
 var proxy_pd = "PROXY 127.0.0.1:9999; DIRECT;";
