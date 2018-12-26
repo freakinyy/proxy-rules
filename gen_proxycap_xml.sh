@@ -104,6 +104,7 @@ cat >> $OUT_TMP_FILE <<EOF
       disabled="false"
       >
       <ip_addresses>
+        <ip_range ip="::" mask="1" />
         <ip_range ip="0.0.0.0" mask="8" />
         <ip_range ip="10.0.0.0" mask="8" />
         <ip_range ip="100.64.0.0" mask="10" />
@@ -124,17 +125,19 @@ cat >> $OUT_TMP_FILE <<EOF
       >
       <hostnames>
         <hostname wildcard="localhost" />
-        <hostname wildcard="ubuntu_server" />
-        <hostname wildcard="openwrt" />
-        <hostname wildcard="wrt32x" />
-        <hostname wildcard="freakinyy-tft5" />
-        <hostname wildcard="freakinyy-cui8" />
         <hostname wildcard="*.localhost" />
-        <hostname wildcard="*.ubuntu_server" />
+        <hostname wildcard="openwrt" />
         <hostname wildcard="*.openwrt" />
+        <hostname wildcard="wrt32x" />
         <hostname wildcard="*.wrt32x" />
-        <hostname wildcard="*.freakinyy-tft5" />
-        <hostname wildcard="*.freakinyy-cui8" />
+        <hostname wildcard="freakin-rvz03" />
+        <hostname wildcard="*.freakin-rvz03" />
+        <hostname wildcard="freakin-shl9" />
+        <hostname wildcard="*.freakin-shl9" />
+        <hostname wildcard="rvz03_ubuntu" />
+        <hostname wildcard="*.rvz03_ubuntu" />
+        <hostname wildcard="shl9_ubuntu" />
+        <hostname wildcard="*.shl9_ubuntu" />
       </hostnames>
     </routing_rule>
     <routing_rule
@@ -237,17 +240,15 @@ cat >> $OUT_TMP_FILE <<EOF
   </routing_rules>
   <remote_dns_exceptions>
     <remote_dns_exception wildcard="localhost" />
-    <remote_dns_exception wildcard="ubuntu_server" />
-    <remote_dns_exception wildcard="openwrt" />
-    <remote_dns_exception wildcard="wrt32x" />
-    <remote_dns_exception wildcard="freakinyy-tft5" />
-    <remote_dns_exception wildcard="freakinyy-cui8" />
     <remote_dns_exception wildcard="*.localhost" />
-    <remote_dns_exception wildcard="*.ubuntu_server" />
+    <remote_dns_exception wildcard="openwrt" />
     <remote_dns_exception wildcard="*.openwrt" />
+    <remote_dns_exception wildcard="wrt32x" />
     <remote_dns_exception wildcard="*.wrt32x" />
-    <remote_dns_exception wildcard="*.freakinyy-tft5" />
-    <remote_dns_exception wildcard="*.freakinyy-cui8" />
+    <remote_dns_exception wildcard="freakin-rvz03" />
+    <remote_dns_exception wildcard="*.freakin-rvz03" />
+    <remote_dns_exception wildcard="freakin-shl9"/>
+    <remote_dns_exception wildcard="*.freakin-shl9"/>
 EOF
 cat $TMP_DIR/Chn_Names.txt | sed "s/^/    <remote_dns_exception wildcard=\"*./g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
 

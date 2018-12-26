@@ -63,11 +63,12 @@ var proxy_hfut = "SOCKS5 127.0.0.1:1082; DIRECT;";
 
 var Local_Names = [
   "http://localhost",
-  "http://ubuntu_server",
   "http://openwrt",
   "http://wrt32x",
-  "http://freakinyy-tft5",
-  "http://freakinyy-cui8"
+  "http://freakin-rvz03",
+  "http://freakin-shl9",
+  "http://rvz03_ubuntu",
+  "http://shl9_ubuntu",
 ];
 
 var Pd_Names = [
