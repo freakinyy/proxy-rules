@@ -249,6 +249,10 @@ cat >> $OUT_TMP_FILE <<EOF
     <remote_dns_exception wildcard="*.freakin-rvz03" />
     <remote_dns_exception wildcard="freakin-shl9"/>
     <remote_dns_exception wildcard="*.freakin-shl9"/>
+    <remote_dns_exception wildcard="rvz03_ubuntu" />
+    <remote_dns_exception wildcard="*.rvz03_ubuntu" />
+    <remote_dns_exception wildcard="shl9_ubuntu"/>
+    <remote_dns_exception wildcard="*.shl9_ubuntu"/>
 EOF
 cat $TMP_DIR/Chn_Names.txt | sed "s/^/    <remote_dns_exception wildcard=\"*./g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
 
