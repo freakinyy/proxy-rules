@@ -124,14 +124,14 @@ cat >> $OUT_TMP_FILE <<EOF
       disabled="false"
       >
       <hostnames>
-		<hostname wildcard="*localhost*" />
-		<hostname wildcard="*openwrt*" />
-		<hostname wildcard="*wrt32x*" />
-		<hostname wildcard="*mshome.net*" />
-		<hostname wildcard="*freakin-rvz03*" />
-		<hostname wildcard="*freakin-shl9*"/>
-		<hostname wildcard="*rvz03_ubuntu*" />
-		<hostname wildcard="*shl9_ubuntu*"/>
+		<hostname wildcard="*localhost" />
+		<hostname wildcard="*openwrt" />
+		<hostname wildcard="*wrt32x" />
+		<hostname wildcard="*mshome.net" />
+		<hostname wildcard="*freakin-rvz03" />
+		<hostname wildcard="*freakin-shl9"/>
+		<hostname wildcard="*rvz03_ubuntu" />
+		<hostname wildcard="*shl9_ubuntu"/>
       </hostnames>
     </routing_rule>
     <routing_rule
@@ -158,7 +158,7 @@ cat >> $OUT_TMP_FILE <<EOF
       disabled="false"
       >
       <hostnames>
-        <hostname wildcard="*hellowzm.cn*" />
+        <hostname wildcard="*hellowzm.cn" />
       </hostnames>
     </routing_rule>
     <routing_rule
@@ -170,8 +170,8 @@ cat >> $OUT_TMP_FILE <<EOF
       >
       <proxy_or_chain name="Proxy_JP" />
       <hostnames>
-        <hostname wildcard="*nicovideo.jp*" />
-        <hostname wildcard="*dmm.com*" />
+        <hostname wildcard="*nicovideo.jp" />
+        <hostname wildcard="*dmm.com" />
       </hostnames>
     </routing_rule>
     <routing_rule
@@ -183,15 +183,15 @@ cat >> $OUT_TMP_FILE <<EOF
       >
       <proxy_or_chain name="Proxy_HFUT" />
       <hostnames>
-        <hostname wildcard="*cnki.net*" />
-        <hostname wildcard="*wanfangdata.com.cn*" />
-        <hostname wildcard="*cqvip.com*" />
-        <hostname wildcard="*ieee.org*" />
-        <hostname wildcard="*webofknowledge.com*" />
-        <hostname wildcard="*dl.acm.org*" />
-        <hostname wildcard="*engineeringvillage.com*" />
-        <hostname wildcard="*sciencedirect.com*" />
-        <hostname wildcard="*theiet.org*" />
+        <hostname wildcard="*cnki.net" />
+        <hostname wildcard="*wanfangdata.com.cn" />
+        <hostname wildcard="*cqvip.com" />
+        <hostname wildcard="*ieee.org" />
+        <hostname wildcard="*webofknowledge.com" />
+        <hostname wildcard="*dl.acm.org" />
+        <hostname wildcard="*engineeringvillage.com" />
+        <hostname wildcard="*sciencedirect.com" />
+        <hostname wildcard="*theiet.org" />
       </hostnames>
     </routing_rule>
     <routing_rule
@@ -217,7 +217,7 @@ cat >> $OUT_TMP_FILE <<EOF
       >
       <hostnames>
 EOF
-cat $TMP_DIR/Chn_Names.txt | sed "s/^/        <hostname wildcard=\"*/g" | sed "s/$/*\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
+cat $TMP_DIR/Chn_Names.txt | sed "s/^/        <hostname wildcard=\"*/g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
 
 cat >> $OUT_TMP_FILE <<EOF
       </hostnames>
@@ -233,16 +233,16 @@ cat >> $OUT_TMP_FILE <<EOF
     </routing_rule>
   </routing_rules>
   <remote_dns_exceptions>
-    <remote_dns_exception wildcard="*localhost*" />
-    <remote_dns_exception wildcard="*openwrt*" />
-    <remote_dns_exception wildcard="*wrt32x*" />
-    <remote_dns_exception wildcard="*mshome.net*" />
-    <remote_dns_exception wildcard="*freakin-rvz03*" />
-    <remote_dns_exception wildcard="*freakin-shl9*"/>
-    <remote_dns_exception wildcard="*rvz03_ubuntu*" />
-    <remote_dns_exception wildcard="*shl9_ubuntu*"/>
+    <remote_dns_exception wildcard="*localhost" />
+    <remote_dns_exception wildcard="*openwrt" />
+    <remote_dns_exception wildcard="*wrt32x" />
+    <remote_dns_exception wildcard="*mshome.net" />
+    <remote_dns_exception wildcard="*freakin-rvz03" />
+    <remote_dns_exception wildcard="*freakin-shl9"/>
+    <remote_dns_exception wildcard="*rvz03_ubuntu" />
+    <remote_dns_exception wildcard="*shl9_ubuntu"/>
 EOF
-cat $TMP_DIR/Chn_Names.txt | sed "s/^/    <remote_dns_exception wildcard=\"*/g" | sed "s/$/*\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
+cat $TMP_DIR/Chn_Names.txt | sed "s/^/    <remote_dns_exception wildcard=\"*/g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
 
 cat >> $OUT_TMP_FILE <<EOF
   </remote_dns_exceptions>
