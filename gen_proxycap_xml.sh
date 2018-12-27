@@ -105,7 +105,7 @@ cat >> $OUT_TMP_FILE <<EOF
       >
       <ip_addresses>
         <ip_range ip="::" mask="1" />
-        <ip_range ip="7fff::" mask="1" />
+        <ip_range ip="8000::" mask="1" />
         <ip_range ip="0.0.0.0" mask="8" />
         <ip_range ip="10.0.0.0" mask="8" />
         <ip_range ip="100.64.0.0" mask="10" />
