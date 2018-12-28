@@ -243,7 +243,7 @@ cat >> $OUT_TMP_FILE <<EOF
     <remote_dns_exception wildcard="*shl9_ubuntu"/>
     <remote_dns_exception wildcard="*.mshome.net" />
 EOF
-cat $TMP_DIR/Chn_Names.txt | sed "s/^/    <remote_dns_exception wildcard=\"*./g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
+#cat $TMP_DIR/Chn_Names.txt | sed "s/^/    <remote_dns_exception wildcard=\"*./g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
 
 cat >> $OUT_TMP_FILE <<EOF
   </remote_dns_exceptions>
