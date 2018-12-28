@@ -109,7 +109,7 @@ cat >> $OUT_TMP_FILE <<EOF
         <ip_range ip="0.0.0.0" mask="8" />
         <ip_range ip="10.0.0.0" mask="8" />
         <ip_range ip="100.64.0.0" mask="10" />
-        <ip_range ip="127.0.0.0" mask="9" />
+        <ip_range ip="127.0.0.0" mask="8" />
         <ip_range ip="169.254.0.0" mask="16" />
         <ip_range ip="172.16.0.0" mask="12" />
         <ip_range ip="192.168.0.0" mask="16" />
