@@ -165,7 +165,7 @@ cat >> $OUT_TMP_FILE <<EOF
     <routing_rule
       name="JP_Names"
       action="proxy"
-      remote_dns="true"
+      remote_dns="false"
       transports="all"
       disabled="false"
       >
@@ -178,7 +178,7 @@ cat >> $OUT_TMP_FILE <<EOF
     <routing_rule
       name="Lib_Names"
       action="proxy"
-      remote_dns="true"
+      remote_dns="false"
       transports="all"
       disabled="false"
       >
@@ -226,7 +226,7 @@ cat >> $OUT_TMP_FILE <<EOF
     <routing_rule
       name="Others"
       action="proxy"
-      remote_dns="true"
+      remote_dns="false"
       transports="all"
       disabled="false"
       >
