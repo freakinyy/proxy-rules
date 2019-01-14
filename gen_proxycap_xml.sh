@@ -55,9 +55,6 @@ OUT_TMP_FILE="$TMP_DIR/gen_proxycap_xml.out.tmp"
 echo "Getting China IPs..."
 curl -s -L $CURL_EXTARG 'https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > $TMP_DIR/Chn_IPs.txt
 
-echo "Getting China Names..."
-curl -s -L $CURL_EXTARG 'https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf' | grep -v "^#" | sed "s/server=\///g" | sed "s/\/114.114.114.114//g" | sort | awk '{if ($0!=line) print;line=$0}' > $TMP_DIR/Chn_Names.txt
-
 echo "Generating $OUT_FILE..."
 
 cat >> $OUT_TMP_FILE <<EOF
@@ -68,33 +65,11 @@ cat >> $OUT_TMP_FILE <<EOF
       name="Proxy_US"
       type="socks5"
       hostname="localhost"
-      port="1080"
+      port="1081"
       auth_method="none"
       is_default="true"
     />
-    <proxy_server
-      name="Proxy_JP"
-      type="socks5"
-      hostname="localhost"
-      port="1081"
-      auth_method="none"
-      is_default="false"
-    />
-    <proxy_server
-      name="Proxy_HFUT"
-      type="socks5"
-      hostname="localhost"
-      port="1082"
-      auth_method="none"
-      is_default="false"
-    />
   </proxy_servers>
-  <proxy_chains>
-    <proxy_chain name="Chain_US->JP">
-       <proxy_server name="Proxy_US" />
-       <proxy_server name="Proxy_JP" />
-    </proxy_chain>
-  </proxy_chains>
   <routing_rules>
     <routing_rule
       name="Local_IPs"
@@ -109,31 +84,12 @@ cat >> $OUT_TMP_FILE <<EOF
         <ip_range ip="0.0.0.0" mask="8" />
         <ip_range ip="10.0.0.0" mask="8" />
         <ip_range ip="100.64.0.0" mask="10" />
-        <ip_range ip="127.0.0.0" mask="8" />
         <ip_range ip="169.254.0.0" mask="16" />
         <ip_range ip="172.16.0.0" mask="12" />
         <ip_range ip="192.168.0.0" mask="16" />
         <ip_range ip="224.0.0.0" mask="4" />
         <ip_range ip="240.0.0.0" mask="4" />
       </ip_addresses>
-    </routing_rule>
-    <routing_rule
-      name="Local_Names"
-      action="direct"
-      remote_dns="false"
-      transports="all"
-      disabled="false"
-      >
-      <hostnames>
-		<hostname wildcard="*localhost" />
-		<hostname wildcard="*openwrt" />
-		<hostname wildcard="*wrt32x" />
-		<hostname wildcard="*freakin-rvz03" />
-		<hostname wildcard="*freakin-shl9"/>
-		<hostname wildcard="*rvz03_ubuntu" />
-		<hostname wildcard="*shl9_ubuntu"/>
-		<hostname wildcard="*.mshome.net" />
-      </hostnames>
     </routing_rule>
     <routing_rule
       name="Proxy_IPs"
@@ -163,39 +119,6 @@ cat >> $OUT_TMP_FILE <<EOF
       </hostnames>
     </routing_rule>
     <routing_rule
-      name="JP_Names"
-      action="proxy"
-      remote_dns="false"
-      transports="all"
-      disabled="false"
-      >
-      <proxy_or_chain name="Proxy_JP" />
-      <hostnames>
-        <hostname wildcard="*.nicovideo.jp" />
-        <hostname wildcard="*.dmm.com" />
-      </hostnames>
-    </routing_rule>
-    <routing_rule
-      name="Lib_Names"
-      action="proxy"
-      remote_dns="false"
-      transports="all"
-      disabled="false"
-      >
-      <proxy_or_chain name="Proxy_HFUT" />
-      <hostnames>
-        <hostname wildcard="*.cnki.net" />
-        <hostname wildcard="*.wanfangdata.com.cn" />
-        <hostname wildcard="*.cqvip.com" />
-        <hostname wildcard="*.ieee.org" />
-        <hostname wildcard="*.webofknowledge.com" />
-        <hostname wildcard="*.dl.acm.org" />
-        <hostname wildcard="*.engineeringvillage.com" />
-        <hostname wildcard="*.sciencedirect.com" />
-        <hostname wildcard="*.theiet.org" />
-      </hostnames>
-    </routing_rule>
-    <routing_rule
       name="Chn_IPs"
       action="direct"
       remote_dns="false"
@@ -210,20 +133,6 @@ cat >> $OUT_TMP_FILE <<EOF
       </ip_addresses>
     </routing_rule>
     <routing_rule
-      name="Chn_Names"
-      action="direct"
-      remote_dns="false"
-      transports="all"
-      disabled="false"
-      >
-      <hostnames>
-EOF
-cat $TMP_DIR/Chn_Names.txt | sed "s/^/        <hostname wildcard=\"*./g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
-
-cat >> $OUT_TMP_FILE <<EOF
-      </hostnames>
-    </routing_rule>
-    <routing_rule
       name="Others"
       action="proxy"
       remote_dns="false"
@@ -233,20 +142,6 @@ cat >> $OUT_TMP_FILE <<EOF
       <proxy_or_chain name="Proxy_US" />
     </routing_rule>
   </routing_rules>
-  <remote_dns_exceptions>
-    <remote_dns_exception wildcard="*localhost" />
-    <remote_dns_exception wildcard="*openwrt" />
-    <remote_dns_exception wildcard="*wrt32x" />
-    <remote_dns_exception wildcard="*freakin-rvz03" />
-    <remote_dns_exception wildcard="*freakin-shl9"/>
-    <remote_dns_exception wildcard="*rvz03_ubuntu" />
-    <remote_dns_exception wildcard="*shl9_ubuntu"/>
-    <remote_dns_exception wildcard="*.mshome.net" />
-EOF
-cat $TMP_DIR/Chn_Names.txt | sed "s/^/    <remote_dns_exception wildcard=\"*./g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
-
-cat >> $OUT_TMP_FILE <<EOF
-  </remote_dns_exceptions>
 </proxycap_ruleset>
 EOF
 
