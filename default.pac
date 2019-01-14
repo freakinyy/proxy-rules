@@ -1,7 +1,7 @@
 var direct = "DIRECT;";
 var proxy_pd = "PROXY 127.0.0.1:9999; DIRECT;";
 var proxy_us = "SOCKS5 127.0.0.1:1081; DIRECT;";
-var proxy_jp = "SOCKS5 127.0.0.1:1082; SOCKS 127.0.0.1:1080; DIRECT;";
+var proxy_jp = "SOCKS5 127.0.0.1:1082; SOCKS 127.0.0.1:1081; DIRECT;";
 var proxy_hfut = "SOCKS5 127.0.0.1:1083; DIRECT;";
 
 var Local_Names = [
