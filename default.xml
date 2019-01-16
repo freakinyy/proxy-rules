@@ -550,6 +550,7 @@
         <ip_range ip="103.132.188.0" mask="22" />
         <ip_range ip="103.132.208.0" mask="22" />
         <ip_range ip="103.132.212.0" mask="22" />
+        <ip_range ip="103.132.234.0" mask="23" />
         <ip_range ip="103.132.60.0" mask="22" />
         <ip_range ip="103.132.64.0" mask="22" />
         <ip_range ip="103.132.68.0" mask="22" />
