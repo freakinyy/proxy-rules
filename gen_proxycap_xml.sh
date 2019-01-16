@@ -36,15 +36,18 @@ done
 # Check path & file name
 if [ -z $OUT_FILE ]; then
     echo "Error: Please specify the path to the output file(using -o/--output argument)."
-    exit 1
+    #exit 1
+	OUT_FILE="default.xml"
 else
     if [ -z ${OUT_FILE##*/} ]; then
         echo "Error: '$OUT_FILE' is a path, not a file."
-        exit 1
+        #exit 1
+		OUT_FILE="default.xml"
     else
         if [ ${OUT_FILE}a != ${OUT_FILE%/*}a ] && [ ! -d ${OUT_FILE%/*} ]; then
             echo "Error: Folder do not exist: '${OUT_FILE%/*}'"
-            exit 1
+            #exit 1
+			OUT_FILE="default.xml"
         fi
     fi
 fi
