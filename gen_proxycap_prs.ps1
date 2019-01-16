@@ -1,6 +1,7 @@
-echo "生成xml文件..."
+echo "Generating XML file..."
 .\gen_proxycap_xml.sh -o  .\default.xml
-echo "生成prs文件..."
+echo "Generating PRS file..."
 .\xml2prs.exe .\default.xml .\default.prs
+echo "Updating to Git..."
 git commit -a -m '' --allow-empty-message
 git push
