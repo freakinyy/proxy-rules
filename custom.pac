@@ -11,7 +11,7 @@ var Pd_Names = [
 ];
 
 var Hfut_Names = [
-  "||hfut.edu.cn",
+  "||edu.cn",
   "||cnki.net",
   "||wanfangdata.com.cn",
   "||cqvip.com",
