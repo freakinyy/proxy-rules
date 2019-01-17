@@ -25,7 +25,6 @@ var Hfut_Names = [
 
 var Jp_Names = [
   "||jp",
-  "||nicovideo.jp",
   "||dmm.com"
 ];
 
