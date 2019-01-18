@@ -2,7 +2,7 @@ var direct = "DIRECT;";
 var proxy_pd = "PROXY 127.0.0.1:9999; DIRECT;";
 var proxy_us = "SOCKS5 127.0.0.1:1081; DIRECT;";
 var proxy_jp = "SOCKS5 127.0.0.1:1082; SOCKS 127.0.0.1:1081; DIRECT;";
-var proxy_hfut = "SOCKS5 127.0.0.1:1083; DIRECT;";
+var proxy_cnedu = "SOCKS5 127.0.0.1:1083; DIRECT;";
 
 var Pd_Names = [
   "||pan.baidu.com",
@@ -10,7 +10,7 @@ var Pd_Names = [
   "||bilibili.com"
 ];
 
-var Hfut_Names = [
+var Cnedu_Names = [
   "||edu.cn",
   "||cnki.net",
   "||wanfangdata.com.cn",
@@ -816,9 +816,9 @@ for (var i = 0; i < Pd_Names.length; i++) {
     Pd_Names_Matcher.add(Filter.fromText(Pd_Names[i]));
 }
 
-var Hfut_Names_Matcher = new CombinedMatcher();
-for (var i = 0; i < Hfut_Names.length; i++) {
-    Hfut_Names_Matcher.add(Filter.fromText(Hfut_Names[i]));
+var Cnedu_Names_Matcher = new CombinedMatcher();
+for (var i = 0; i < Cnedu_Names.length; i++) {
+    Cnedu_Names_Matcher.add(Filter.fromText(Cnedu_Names[i]));
 }
 
 var Jp_Names_Matcher = new CombinedMatcher();
@@ -835,8 +835,8 @@ function FindProxyForURL(url, host) {
     if (Pd_Names_Matcher.matchesAny(url, host) instanceof BlockingFilter) {
         return proxy_pd;
     }
-    if (Hfut_Names_Matcher.matchesAny(url, host) instanceof BlockingFilter) {
-        return proxy_hfut;
+    if (Cnedu_Names_Matcher.matchesAny(url, host) instanceof BlockingFilter) {
+        return proxy_cnedu;
     }
     if (Jp_Names_Matcher.matchesAny(url, host) instanceof BlockingFilter) {
         return proxy_jp;
