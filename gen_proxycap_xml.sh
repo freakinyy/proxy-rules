@@ -104,6 +104,7 @@ cat >> $OUT_TMP_FILE <<EOF
       <programs>
         <program path="Shadowsocks.exe" dir_included="false" />
         <program path="obfs-local.exe" dir_included="false" />
+        <program path="v2ray-plugin.exe" dir_included="false" />
         <program path="BitComet.exe" dir_included="false" />
       </programs>
     </routing_rule>
