@@ -82,16 +82,30 @@ cat >> $OUT_TMP_FILE <<EOF
       disabled="false"
       >
       <ip_addresses>
-        <ip_range ip="::" mask="1" />
-        <ip_range ip="8000::" mask="1" />
         <ip_range ip="0.0.0.0" mask="8" />
         <ip_range ip="10.0.0.0" mask="8" />
         <ip_range ip="100.64.0.0" mask="10" />
         <ip_range ip="169.254.0.0" mask="16" />
         <ip_range ip="172.16.0.0" mask="12" />
+        <ip_range ip="192.0.0.0" mask="24" />
+        <ip_range ip="192.0.2.0" mask="24" />
+        <ip_range ip="192.88.99.0" mask="24" />
         <ip_range ip="192.168.0.0" mask="16" />
+        <ip_range ip="198.18.0.0" mask="15" />
+        <ip_range ip="198.51.100.0" mask="24" />
+        <ip_range ip="203.0.113.0" mask="24" />
         <ip_range ip="224.0.0.0" mask="4" />
         <ip_range ip="240.0.0.0" mask="4" />
+        <ip_range ip="255.255.255.255" mask="32" />
+        <ip_range ip="::" mask="128" />
+        <ip_range ip="100::" mask="64" />
+        <ip_range ip="2001::" mask="32" />
+        <ip_range ip="2001:20::" mask="28" />
+        <ip_range ip="2001:db8::" mask="32" />
+        <ip_range ip="2002::" mask="16" />
+        <ip_range ip="fc00::" mask="7" />
+        <ip_range ip="fe80::" mask="10" />
+        <ip_range ip="ff00:" mask="8" />
       </ip_addresses>
     </routing_rule>
     <routing_rule
