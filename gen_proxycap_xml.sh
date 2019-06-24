@@ -105,7 +105,7 @@ cat >> $OUT_TMP_FILE <<EOF
         <ip_range ip="2002::" mask="16" />
         <ip_range ip="fc00::" mask="7" />
         <ip_range ip="fe80::" mask="10" />
-        <ip_range ip="ff00:" mask="8" />
+        <ip_range ip="ff00::" mask="8" />
       </ip_addresses>
     </routing_rule>
     <routing_rule
