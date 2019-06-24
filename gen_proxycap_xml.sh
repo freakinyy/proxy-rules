@@ -56,9 +56,9 @@ TMP_DIR=`mktemp -d /tmp/gen_proxycap_xml.XXXXXX`
 OUT_TMP_FILE="$TMP_DIR/gen_proxycap_xml.out.tmp"
 
 echo "Getting China IPs..."
-latest=$(curl -s -L $CURL_EXTARG 'https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest')
-echo $latest | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($5)/log(2)) }' >> $TMP_DIR/Chn_IPs.txt
-echo $latest | grep ipv6 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, $5) }' >> $TMP_DIR/Chn_IPs.txt
+curl -s -L $CURL_EXTARG 'https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' > $TMP_DIR/delegated-apnic-latest.txt
+cat $TMP_DIR/delegated-apnic-latest.txt | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > $TMP_DIR/Chn_IPs.txt
+cat $TMP_DIR/delegated-apnic-latest.txt | grep ipv6 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, $5) }' >> $TMP_DIR/Chn_IPs.txt
 
 echo "Generating $OUT_FILE..."
 
