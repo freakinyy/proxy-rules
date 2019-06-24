@@ -134,7 +134,7 @@ cat >> $OUT_TMP_FILE <<EOF
       <ip_addresses>
 EOF
 #cat $TMP_DIR/Chn_IPs.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" mask=\"/g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}'  >> $OUT_TMP_FILE
-cat $TMP_DIR/Chn_IPs.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" mask=\"/g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}'  >> $OUT_TMP_FILE
+cat $TMP_DIR/Chn_IPs.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" mask=\"/g" | sed "s/$/\" \/>/g" | awk '{if ($0!=line) print;line=$0}'  >> $OUT_TMP_FILE
 
 cat >> $OUT_TMP_FILE <<EOF
       </ip_addresses>
