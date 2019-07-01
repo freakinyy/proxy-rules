@@ -138,6 +138,15 @@ cat $TMP_DIR/Chn_IPs.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" ma
 
 cat >> $OUT_TMP_FILE <<EOF
       </ip_addresses>
+    </routing_rule><
+	routing_rule	
+      name="Others"	
+      action="proxy"	
+      remote_dns="false"	
+      transports="all"	
+      disabled="false"	
+      >	
+      <proxy_or_chain name="Proxy_US" />	
     </routing_rule>
   </routing_rules>
 </proxycap_ruleset>
