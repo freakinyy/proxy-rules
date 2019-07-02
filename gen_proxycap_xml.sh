@@ -58,7 +58,7 @@ OUT_TMP_FILE="$TMP_DIR/gen_proxycap_xml.out.tmp"
 echo "Getting China IPs..."
 curl -s -L $CURL_EXTARG 'https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' > $TMP_DIR/delegated-apnic-latest.txt
 cat $TMP_DIR/delegated-apnic-latest.txt | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > $TMP_DIR/Chn_IPs.txt
-cat $TMP_DIR/delegated-apnic-latest.txt | grep ipv6 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, $5) }' >> $TMP_DIR/Chn_IPs.txt
+cat $TMP_DIR/delegated-apnic-latest.txt | grep ipv6 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, $5) }' > $TMP_DIR/Chn_IP6s.txt
 
 echo "Generating $OUT_FILE..."
 
@@ -133,8 +133,21 @@ cat >> $OUT_TMP_FILE <<EOF
       >
       <ip_addresses>
 EOF
-#cat $TMP_DIR/Chn_IPs.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" mask=\"/g" | sed "s/$/\" \/>/g" | sort | awk '{if ($0!=line) print;line=$0}'  >> $OUT_TMP_FILE
 cat $TMP_DIR/Chn_IPs.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" mask=\"/g" | sed "s/$/\" \/>/g" | awk '{if ($0!=line) print;line=$0}'  >> $OUT_TMP_FILE
+
+cat >> $OUT_TMP_FILE <<EOF
+      </ip_addresses>
+    </routing_rule>
+    <routing_rule
+      name="Chn_IP6s"
+      action="direct"
+      remote_dns="false"
+      transports="all"
+      disabled="false"
+      >
+      <ip_addresses>
+EOF
+cat $TMP_DIR/Chn_IP6s.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" mask=\"/g" | sed "s/$/\" \/>/g" | awk '{if ($0!=line) print;line=$0}'  >> $OUT_TMP_FILE
 
 cat >> $OUT_TMP_FILE <<EOF
       </ip_addresses>
