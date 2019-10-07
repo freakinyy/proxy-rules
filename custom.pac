@@ -798,19 +798,9 @@ function isInetIP(strIp) {
     return false;
 }
 
-var Pd_Names_Matcher = new CombinedMatcher();
-for (var i = 0; i < Pd_Names.length; i++) {
-    Pd_Names_Matcher.add(Filter.fromText(Pd_Names[i]));
-}
-
 var Cnedu_Names_Matcher = new CombinedMatcher();
 for (var i = 0; i < Cnedu_Names.length; i++) {
     Cnedu_Names_Matcher.add(Filter.fromText(Cnedu_Names[i]));
-}
-
-var Jp_Names_Matcher = new CombinedMatcher();
-for (var i = 0; i < Jp_Names.length; i++) {
-    Jp_Names_Matcher.add(Filter.fromText(Jp_Names[i]));
 }
 
 function FindProxyForURL(url, host) {
