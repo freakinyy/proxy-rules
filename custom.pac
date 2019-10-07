@@ -1,14 +1,6 @@
 var direct = "DIRECT;";
-var proxy_pd = "PROXY 127.0.0.1:9999; DIRECT;";
-var proxy_us = "SOCKS5 127.0.0.1:1081; DIRECT;";
-var proxy_jp = "SOCKS5 127.0.0.1:1082; SOCKS 127.0.0.1:1081; DIRECT;";
-var proxy_cnedu = "SOCKS5 127.0.0.1:1083; DIRECT;";
-
-var Pd_Names = [
-  "||pan.baidu.com",
-  "||yun.baidu.com",
-  "||bilibili.com"
-];
+var proxy_us = "SOCKS5 127.0.0.1:1081; DIRECT;"
+var proxy_cnedu = "SOCKS5 127.0.0.1:1082; DIRECT;";
 
 var Cnedu_Names = [
   "||edu.cn",
@@ -21,11 +13,6 @@ var Cnedu_Names = [
   "||engineeringvillage.com",
   "||sciencedirect.com",
   "||theiet.org"
-];
-
-var Jp_Names = [
-  "||jp",
-  "||dmm.com"
 ];
 
 function createDict()
@@ -832,14 +819,8 @@ function FindProxyForURL(url, host) {
 ;		    return direct;
 ;		}
 ;    }
-    if (Pd_Names_Matcher.matchesAny(url, host) instanceof BlockingFilter) {
-        return proxy_pd;
-    }
     if (Cnedu_Names_Matcher.matchesAny(url, host) instanceof BlockingFilter) {
         return proxy_cnedu;
-    }
-    if (Jp_Names_Matcher.matchesAny(url, host) instanceof BlockingFilter) {
-        return proxy_jp;
     }
     return direct;
 }
