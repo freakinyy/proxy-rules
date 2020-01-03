@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#Gernarate xml file including rules of local ips, local names,  proxyee-down, librabry names, Jpan names china ips and china names for proxycap.
+#Gernarate xml file including rules of local ips, local names and china ips for proxycap.
 
 SLIENT=
 CURL_EXTARG=''
