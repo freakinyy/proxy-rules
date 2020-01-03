@@ -64,6 +64,7 @@ protocol udp
 server 119.29.29.29:53
 parallel off
 
+*.lan
 EOF
 
 #curl -s -L $CURL_EXTARG 'https://github.com/felixonmars/dnsmasq-china-list/raw/master/accelerated-domains.china.conf' | grep -v "^#" | sed "s/server=\///g" | sed "s/\/114.114.114.114//g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
