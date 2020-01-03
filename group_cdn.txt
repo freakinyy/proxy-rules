@@ -1,6 +1,7 @@
 protocol udp
 server 119.29.29.29:53
 parallel off
+
 00.net
 0000go.com
 000219.com
