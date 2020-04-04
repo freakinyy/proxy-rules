@@ -33,11 +33,6 @@ while [ ${#} -gt 0 ]; do
 	shift
 done
 
-which mktemp base64 >/dev/null
-if [ $? != 0 ]; then
-    export PATH=$PATH:/koolshare/bin
-fi
-
 # Check path & file name
 if [ -z $OUT_FILE ]; then
     echo "Error: Please specify the path to the output file(using -o/--output argument)."
@@ -65,6 +60,7 @@ server 119.29.29.29:53
 parallel off
 
 *.lan
+*.arpa
 EOF
 
 #curl -s -L $CURL_EXTARG 'https://github.com/felixonmars/dnsmasq-china-list/raw/master/accelerated-domains.china.conf' | grep -v "^#" | sed "s/server=\///g" | sed "s/\/114.114.114.114//g" | sort | awk '{if ($0!=line) print;line=$0}' >> $OUT_TMP_FILE
