@@ -1,9 +1,5 @@
-protocol udp
-server 119.29.29.29:53
-parallel off
-
-*.lan
-*.arpa
+lan
+arpa
 00.net
 00000wg.com
 0000go.com

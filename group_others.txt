@@ -1,5 +1,0 @@
-protocol tcp
-server 8.8.8.8:53
-proxy 127.0.0.1:1081
-
-*
