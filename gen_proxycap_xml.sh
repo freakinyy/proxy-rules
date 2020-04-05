@@ -90,17 +90,6 @@ cat >> $OUT_TMP_FILE <<EOF
         <program path="dnsforwarder.exe" dir_included="false" />
       </programs>
     </routing_rule>
-	<routing_rule
-      name="Programs_Others"
-      action="direct"
-      remote_dns="false"
-      transports="all"
-      disabled="false"
-      >
-      <programs>
-        <program path="BitComet.exe" dir_included="false" />
-      </programs>
-    </routing_rule>
     <routing_rule
       name="IPs_Local"
       action="direct"
@@ -163,15 +152,16 @@ cat $TMP_DIR/Chn_IP6s.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" m
 cat >> $OUT_TMP_FILE <<EOF
       </ip_addresses>
     </routing_rule>
-    <routing_rule
-      name="IPs_Others"
+	<routing_rule
+      name="WhiteList_Others"
       action="direct"
       remote_dns="false"
       transports="all"
       disabled="false"
       >
-      <ip_addresses>
-      </ip_addresses>
+      <programs>
+        <program path="BitComet.exe" dir_included="false" />
+      </programs>
     </routing_rule>
 	<routing_rule	
       name="Others"	
