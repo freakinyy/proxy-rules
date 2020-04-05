@@ -77,7 +77,32 @@ cat >> $OUT_TMP_FILE <<EOF
   </proxy_servers>
   <routing_rules>
     <routing_rule
-      name="Local_IPs"
+      name="Programs_Proxy"
+      action="direct"
+      remote_dns="false"
+      transports="all"
+      disabled="false"
+      >
+      <programs>
+        <program path="Shadowsocks.exe" dir_included="false" />
+        <program path="obfs-local.exe" dir_included="false" />
+        <program path="v2ray-plugin.exe" dir_included="false" />
+        <program path="dnsforwarder.exe" dir_included="false" />
+      </programs>
+    </routing_rule>
+	<routing_rule
+      name="Programs_Others"
+      action="direct"
+      remote_dns="false"
+      transports="all"
+      disabled="false"
+      >
+      <programs>
+        <program path="BitComet.exe" dir_included="false" />
+      </programs>
+    </routing_rule>
+    <routing_rule
+      name="IPs_Local"
       action="direct"
       remote_dns="false"
       transports="all"
@@ -111,32 +136,7 @@ cat >> $OUT_TMP_FILE <<EOF
       </ip_addresses>
     </routing_rule>
     <routing_rule
-      name="Prog_Proxy"
-      action="direct"
-      remote_dns="false"
-      transports="all"
-      disabled="false"
-      >
-      <programs>
-        <program path="Shadowsocks.exe" dir_included="false" />
-        <program path="obfs-local.exe" dir_included="false" />
-        <program path="v2ray-plugin.exe" dir_included="false" />
-        <program path="dnsforwarder.exe" dir_included="false" />
-      </programs>
-    </routing_rule>
-	<routing_rule
-      name="Prog_Others"
-      action="direct"
-      remote_dns="false"
-      transports="all"
-      disabled="false"
-      >
-      <programs>
-        <program path="BitComet.exe" dir_included="false" />
-      </programs>
-    </routing_rule>
-    <routing_rule
-      name="Chn_IPs"
+      name="IPs_Chn"
       action="direct"
       remote_dns="false"
       transports="all"
@@ -161,6 +161,16 @@ EOF
 cat $TMP_DIR/Chn_IP6s.txt | sed "s/^/        <ip_range ip=\"/g" | sed "s/\//\" mask=\"/g" | sed "s/$/\" \/>/g" | awk '{if ($0!=line) print;line=$0}'  >> $OUT_TMP_FILE
 
 cat >> $OUT_TMP_FILE <<EOF
+      </ip_addresses>
+    </routing_rule>
+    <routing_rule
+      name="IPs_Others"
+      action="direct"
+      remote_dns="false"
+      transports="all"
+      disabled="false"
+      >
+      <ip_addresses>
       </ip_addresses>
     </routing_rule>
 	<routing_rule	
