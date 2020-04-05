@@ -111,7 +111,7 @@ cat >> $OUT_TMP_FILE <<EOF
       </ip_addresses>
     </routing_rule>
     <routing_rule
-      name="Proxy_Prog"
+      name="Prog_Proxy"
       action="direct"
       remote_dns="false"
       transports="all"
@@ -122,6 +122,16 @@ cat >> $OUT_TMP_FILE <<EOF
         <program path="obfs-local.exe" dir_included="false" />
         <program path="v2ray-plugin.exe" dir_included="false" />
         <program path="dnsforwarder.exe" dir_included="false" />
+      </programs>
+    </routing_rule>
+	<routing_rule
+      name="Prog_Others"
+      action="direct"
+      remote_dns="false"
+      transports="all"
+      disabled="false"
+      >
+      <programs>
         <program path="BitComet.exe" dir_included="false" />
       </programs>
     </routing_rule>
