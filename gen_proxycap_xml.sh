@@ -70,7 +70,7 @@ cat >> $OUT_TMP_FILE <<EOF
       name="Proxy_US"
       type="socks5"
       hostname="localhost"
-      port="1081"
+      port="4081"
       auth_method="none"
       is_default="true"
     />
