@@ -2617,6 +2617,7 @@
         <ip_range ip="103.43.100.0" mask="22" />
         <ip_range ip="103.43.104.0" mask="22" />
         <ip_range ip="103.43.124.0" mask="22" />
+        <ip_range ip="103.43.132.0" mask="22" />
         <ip_range ip="103.43.184.0" mask="22" />
         <ip_range ip="103.43.192.0" mask="22" />
         <ip_range ip="103.43.196.0" mask="22" />
@@ -3097,10 +3098,12 @@
         <ip_range ip="103.68.128.0" mask="22" />
         <ip_range ip="103.68.192.0" mask="22" />
         <ip_range ip="103.69.16.0" mask="22" />
+        <ip_range ip="103.69.62.0" mask="23" />
         <ip_range ip="103.69.116.0" mask="22" />
         <ip_range ip="103.69.132.0" mask="22" />
         <ip_range ip="103.69.152.0" mask="22" />
         <ip_range ip="103.70.8.0" mask="22" />
+        <ip_range ip="103.70.14.0" mask="23" />
         <ip_range ip="103.70.148.0" mask="22" />
         <ip_range ip="103.70.220.0" mask="22" />
         <ip_range ip="103.70.224.0" mask="22" />
@@ -3295,6 +3298,8 @@
         <ip_range ip="103.84.64.0" mask="22" />
         <ip_range ip="103.84.72.0" mask="22" />
         <ip_range ip="103.84.136.0" mask="22" />
+        <ip_range ip="103.84.170.0" mask="23" />
+        <ip_range ip="103.84.204.0" mask="23" />
         <ip_range ip="103.85.20.0" mask="22" />
         <ip_range ip="103.85.24.0" mask="22" />
         <ip_range ip="103.85.44.0" mask="22" />
@@ -3306,6 +3311,7 @@
         <ip_range ip="103.85.168.0" mask="22" />
         <ip_range ip="103.85.172.0" mask="22" />
         <ip_range ip="103.85.176.0" mask="22" />
+        <ip_range ip="103.85.186.0" mask="23" />
         <ip_range ip="103.85.224.0" mask="22" />
         <ip_range ip="103.86.28.0" mask="22" />
         <ip_range ip="103.86.32.0" mask="22" />
@@ -3457,7 +3463,6 @@
         <ip_range ip="103.95.68.0" mask="22" />
         <ip_range ip="103.95.88.0" mask="22" />
         <ip_range ip="103.95.92.0" mask="22" />
-        <ip_range ip="103.95.116.0" mask="22" />
         <ip_range ip="103.95.128.0" mask="22" />
         <ip_range ip="103.95.136.0" mask="22" />
         <ip_range ip="103.95.140.0" mask="22" />
@@ -4974,12 +4979,12 @@
         <ip_range ip="103.234.172.0" mask="22" />
         <ip_range ip="103.234.180.0" mask="22" />
         <ip_range ip="103.234.244.0" mask="22" />
-        <ip_range ip="103.235.16.0" mask="22" />
         <ip_range ip="103.235.48.0" mask="22" />
         <ip_range ip="103.235.56.0" mask="22" />
         <ip_range ip="103.235.60.0" mask="22" />
         <ip_range ip="103.235.80.0" mask="22" />
         <ip_range ip="103.235.84.0" mask="22" />
+        <ip_range ip="103.235.100.0" mask="22" />
         <ip_range ip="103.235.128.0" mask="22" />
         <ip_range ip="103.235.132.0" mask="22" />
         <ip_range ip="103.235.136.0" mask="22" />
@@ -6208,7 +6213,6 @@
         <ip_range ip="150.122.0.0" mask="16" />
         <ip_range ip="150.129.136.0" mask="22" />
         <ip_range ip="150.129.192.0" mask="22" />
-        <ip_range ip="150.129.216.0" mask="22" />
         <ip_range ip="150.129.252.0" mask="22" />
         <ip_range ip="150.138.0.0" mask="15" />
         <ip_range ip="150.158.0.0" mask="16" />
@@ -8756,7 +8760,6 @@
         <ip_range ip="2001:df3:2a80::" mask="48" />
         <ip_range ip="2001:df3:3a80::" mask="48" />
         <ip_range ip="2001:df3:a680::" mask="48" />
-        <ip_range ip="2001:df3:b100::" mask="48" />
         <ip_range ip="2001:df3:b380::" mask="48" />
         <ip_range ip="2001:df3:c380::" mask="48" />
         <ip_range ip="2001:df3:c680::" mask="48" />
@@ -8860,7 +8863,6 @@
         <ip_range ip="2400:3fc0::" mask="32" />
         <ip_range ip="2400:4440::" mask="32" />
         <ip_range ip="2400:44c0::" mask="32" />
-        <ip_range ip="2400:44e0::" mask="32" />
         <ip_range ip="2400:4540::" mask="32" />
         <ip_range ip="2400:4600::" mask="32" />
         <ip_range ip="2400:4640::" mask="32" />
@@ -9058,13 +9060,20 @@
         <ip_range ip="2400:d300::" mask="32" />
         <ip_range ip="2400:d440::" mask="32" />
         <ip_range ip="2400:d600::" mask="32" />
+        <ip_range ip="2400:d6a0::" mask="32" />
         <ip_range ip="2400:d6c0::" mask="32" />
+        <ip_range ip="2400:d720::" mask="32" />
         <ip_range ip="2400:d780::" mask="32" />
+        <ip_range ip="2400:d7a0::" mask="32" />
         <ip_range ip="2400:da00::" mask="32" />
+        <ip_range ip="2400:da60::" mask="32" />
         <ip_range ip="2400:dd00::" mask="28" />
         <ip_range ip="2400:dd40::" mask="32" />
+        <ip_range ip="2400:dda0::" mask="32" />
         <ip_range ip="2400:de00::" mask="32" />
+        <ip_range ip="2400:de20::" mask="32" />
         <ip_range ip="2400:de80::" mask="32" />
+        <ip_range ip="2400:dee0::" mask="32" />
         <ip_range ip="2400:e0c0::" mask="32" />
         <ip_range ip="2400:e5c0::" mask="32" />
         <ip_range ip="2400:e680::" mask="32" />
