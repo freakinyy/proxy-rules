@@ -86,6 +86,7 @@ cat >> $OUT_TMP_FILE <<EOF
       <programs>
         <program path="Shadowsocks.exe" dir_included="false" />
         <program path="sslocal.exe" dir_included="false" />
+        <program path="v2ray.exe" dir_included="false" />
         <program path="obfs-local.exe" dir_included="false" />
         <program path="v2ray-plugin.exe" dir_included="false" />
         <program path="overture-windows-amd64.exe" dir_included="false" />
