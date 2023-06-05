@@ -19,11 +19,7 @@
       disabled="false"
       >
       <programs>
-        <program path="Shadowsocks.exe" dir_included="false" />
-        <program path="sslocal.exe" dir_included="false" />
-        <program path="v2ray.exe" dir_included="false" />
-        <program path="obfs-local.exe" dir_included="false" />
-        <program path="v2ray-plugin.exe" dir_included="false" />
+        <program path="sing-box.exe" dir_included="false" />
         <program path="overture-windows-amd64.exe" dir_included="false" />
       </programs>
     </routing_rule>
@@ -4603,6 +4599,8 @@
         <ip_range ip="103.213.180.0" mask="22" />
         <ip_range ip="103.213.184.0" mask="22" />
         <ip_range ip="103.213.188.0" mask="22" />
+        <ip_range ip="103.213.196.0" mask="23" />
+        <ip_range ip="103.213.198.0" mask="23" />
         <ip_range ip="103.214.48.0" mask="22" />
         <ip_range ip="103.214.84.0" mask="22" />
         <ip_range ip="103.214.212.0" mask="22" />
@@ -5799,7 +5797,9 @@
         <ip_range ip="119.162.0.0" mask="15" />
         <ip_range ip="119.164.0.0" mask="14" />
         <ip_range ip="119.176.0.0" mask="12" />
-        <ip_range ip="119.232.0.0" mask="15" />
+        <ip_range ip="119.232.0.0" mask="16" />
+        <ip_range ip="119.233.0.0" mask="17" />
+        <ip_range ip="119.233.128.0" mask="17" />
         <ip_range ip="119.235.128.0" mask="18" />
         <ip_range ip="119.248.0.0" mask="14" />
         <ip_range ip="119.252.96.0" mask="21" />
@@ -6878,7 +6878,8 @@
         <ip_range ip="202.90.193.0" mask="24" />
         <ip_range ip="202.90.196.0" mask="24" />
         <ip_range ip="202.90.205.0" mask="24" />
-        <ip_range ip="202.90.224.0" mask="20" />
+        <ip_range ip="202.90.224.0" mask="21" />
+        <ip_range ip="202.90.232.0" mask="21" />
         <ip_range ip="202.91.0.0" mask="22" />
         <ip_range ip="202.91.36.0" mask="22" />
         <ip_range ip="202.91.96.0" mask="20" />
@@ -8310,12 +8311,22 @@
         <ip_range ip="210.74.128.0" mask="19" />
         <ip_range ip="210.74.160.0" mask="19" />
         <ip_range ip="210.74.192.0" mask="18" />
-        <ip_range ip="210.75.0.0" mask="16" />
+        <ip_range ip="210.75.0.0" mask="17" />
+        <ip_range ip="210.75.128.0" mask="19" />
+        <ip_range ip="210.75.160.0" mask="19" />
+        <ip_range ip="210.75.192.0" mask="19" />
+        <ip_range ip="210.75.224.0" mask="19" />
         <ip_range ip="210.76.0.0" mask="19" />
         <ip_range ip="210.76.32.0" mask="19" />
         <ip_range ip="210.76.64.0" mask="18" />
-        <ip_range ip="210.76.128.0" mask="17" />
-        <ip_range ip="210.77.0.0" mask="16" />
+        <ip_range ip="210.76.128.0" mask="18" />
+        <ip_range ip="210.76.192.0" mask="19" />
+        <ip_range ip="210.76.224.0" mask="19" />
+        <ip_range ip="210.77.0.0" mask="19" />
+        <ip_range ip="210.77.32.0" mask="19" />
+        <ip_range ip="210.77.64.0" mask="19" />
+        <ip_range ip="210.77.96.0" mask="19" />
+        <ip_range ip="210.77.128.0" mask="17" />
         <ip_range ip="210.78.0.0" mask="19" />
         <ip_range ip="210.78.32.0" mask="19" />
         <ip_range ip="210.78.64.0" mask="18" />
@@ -8364,7 +8375,11 @@
         <ip_range ip="211.143.0.0" mask="16" />
         <ip_range ip="211.144.0.0" mask="15" />
         <ip_range ip="211.146.0.0" mask="16" />
-        <ip_range ip="211.147.0.0" mask="16" />
+        <ip_range ip="211.147.0.0" mask="17" />
+        <ip_range ip="211.147.128.0" mask="18" />
+        <ip_range ip="211.147.192.0" mask="20" />
+        <ip_range ip="211.147.208.0" mask="20" />
+        <ip_range ip="211.147.224.0" mask="19" />
         <ip_range ip="211.148.0.0" mask="14" />
         <ip_range ip="211.152.0.0" mask="15" />
         <ip_range ip="211.154.0.0" mask="16" />
@@ -8372,9 +8387,24 @@
         <ip_range ip="211.155.64.0" mask="19" />
         <ip_range ip="211.155.96.0" mask="19" />
         <ip_range ip="211.155.128.0" mask="17" />
-        <ip_range ip="211.156.0.0" mask="14" />
+        <ip_range ip="211.156.0.0" mask="18" />
+        <ip_range ip="211.156.64.0" mask="20" />
+        <ip_range ip="211.156.80.0" mask="20" />
+        <ip_range ip="211.156.96.0" mask="19" />
+        <ip_range ip="211.156.128.0" mask="19" />
+        <ip_range ip="211.156.160.0" mask="20" />
+        <ip_range ip="211.156.176.0" mask="20" />
+        <ip_range ip="211.156.192.0" mask="18" />
+        <ip_range ip="211.157.0.0" mask="16" />
+        <ip_range ip="211.158.0.0" mask="15" />
         <ip_range ip="211.160.0.0" mask="14" />
-        <ip_range ip="211.164.0.0" mask="14" />
+        <ip_range ip="211.164.0.0" mask="15" />
+        <ip_range ip="211.166.0.0" mask="16" />
+        <ip_range ip="211.167.0.0" mask="17" />
+        <ip_range ip="211.167.128.0" mask="19" />
+        <ip_range ip="211.167.160.0" mask="20" />
+        <ip_range ip="211.167.176.0" mask="20" />
+        <ip_range ip="211.167.192.0" mask="18" />
         <ip_range ip="212.64.0.0" mask="17" />
         <ip_range ip="212.129.128.0" mask="17" />
         <ip_range ip="218.0.0.0" mask="16" />
@@ -8447,7 +8477,11 @@
         <ip_range ip="218.204.0.0" mask="15" />
         <ip_range ip="218.206.0.0" mask="15" />
         <ip_range ip="218.240.0.0" mask="14" />
-        <ip_range ip="218.244.0.0" mask="15" />
+        <ip_range ip="218.244.0.0" mask="18" />
+        <ip_range ip="218.244.64.0" mask="19" />
+        <ip_range ip="218.244.96.0" mask="19" />
+        <ip_range ip="218.244.128.0" mask="17" />
+        <ip_range ip="218.245.0.0" mask="16" />
         <ip_range ip="218.246.0.0" mask="15" />
         <ip_range ip="218.249.0.0" mask="16" />
         <ip_range ip="219.72.0.0" mask="16" />
@@ -8739,7 +8773,6 @@
         <ip_range ip="2001:df1:6180::" mask="48" />
         <ip_range ip="2001:df1:61c0::" mask="48" />
         <ip_range ip="2001:df1:6b80::" mask="48" />
-        <ip_range ip="2001:df1:8b00::" mask="48" />
         <ip_range ip="2001:df1:a100::" mask="48" />
         <ip_range ip="2001:df1:bd80::" mask="48" />
         <ip_range ip="2001:df1:c900::" mask="48" />
@@ -9098,10 +9131,13 @@
         <ip_range ip="2400:fc40::" mask="32" />
         <ip_range ip="2400:fcc0::" mask="32" />
         <ip_range ip="2400:fe00::" mask="32" />
+        <ip_range ip="2401:20::" mask="32" />
+        <ip_range ip="2401:60::" mask="32" />
         <ip_range ip="2401:80::" mask="32" />
         <ip_range ip="2401:140::" mask="32" />
         <ip_range ip="2401:1c0::" mask="32" />
         <ip_range ip="2401:540::" mask="32" />
+        <ip_range ip="2401:620::" mask="32" />
         <ip_range ip="2401:7c0::" mask="32" />
         <ip_range ip="2401:800::" mask="32" />
         <ip_range ip="2401:9c0::" mask="32" />
@@ -9350,10 +9386,8 @@
         <ip_range ip="2402:4e00::" mask="32" />
         <ip_range ip="2402:4ec0::" mask="32" />
         <ip_range ip="2402:4f80::" mask="32" />
-        <ip_range ip="2402:50c0::" mask="32" />
         <ip_range ip="2402:5140::" mask="32" />
         <ip_range ip="2402:5180::" mask="32" />
-        <ip_range ip="2402:51c0::" mask="32" />
         <ip_range ip="2402:52c0::" mask="32" />
         <ip_range ip="2402:5340::" mask="32" />
         <ip_range ip="2402:5880::" mask="32" />
@@ -10673,7 +10707,7 @@
       disabled="false"
       >
       <programs>
-        <program path="BitComet.exe" dir_included="false" />
+        <program path="qbittorrent.exe" dir_included="false" />
       </programs>
     </routing_rule>
 	<routing_rule	
